@@ -80,7 +80,6 @@ public class DatabaseInitializationBean implements InitializingBean {
         user.setRoles(roles2);
         userRepository.save(admin);
         userRepository.save(user);
-        admin.setRoles(roles);
         user.setRoles(roles2);
     }
 }
