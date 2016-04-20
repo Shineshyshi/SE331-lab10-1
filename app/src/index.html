@@ -29,6 +29,7 @@
   <div class="navbar navbar-default" ng-controller="LanguageController">
     <div class="container-fluid">
       <div class="collapse navbar-collapse">
+        <div ng-include src="'app/security/login.html'"></div>
         <ul class="nav navbar-nav navbar-right">
           <li ng-class="{'active':currentLocale== 'en'}"><a href="" ng-click="changeLanguage('en')">EN </a></li>
           <li ng-class="{'active':currentLocale== 'fr'}"><a href="" ng-click="changeLanguage('fr')">FR</a></li>
