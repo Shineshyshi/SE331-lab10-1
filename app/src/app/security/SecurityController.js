@@ -13,14 +13,14 @@
     var buffer = [];
     for(var name in data) {
       if( !data.hasOwnProperty(name)) {
-        continue
+        continue;
       }
       var value = data[name];
       buffer.push(encodeURIComponent(name) + "=" + encodeURIComponent((value == null) ? "": value));
     }
 
     var source = buffer.join("&").replace(/%20/g,"+");
-    return source;
+    return (source);
   }
 
   /** @ngInject */
