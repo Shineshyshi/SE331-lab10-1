@@ -37,8 +37,10 @@
           UserService.get(function (user) {
             $rootScope.user = user;
             $location.path("/");
-          });
-          delete $rootScope.error;
+          })},function(error){
+          if(error.status=="401"){
+            $rootScope.error="user name or password is not correct!"
+          }
         }
       )
     }

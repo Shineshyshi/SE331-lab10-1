@@ -46,7 +46,7 @@
     <div class="row">
       <div class="col-md-2">
         <!-- Fixed left nav column -->
-        <div ng-include src="'app/component/leftnav.html'"></div>
+        <div ng-include src="'app/component/leftnav.html'" ng-show="hasRole('admin')"></div>
       </div>
       <div class="col-md-10">
         <!-- Breadcrumbs

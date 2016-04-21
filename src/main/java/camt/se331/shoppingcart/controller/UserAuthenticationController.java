@@ -36,21 +36,18 @@ public class UserAuthenticationController {
      */
 
     @RequestMapping(method = RequestMethod.GET)
-    public UserTransfer getUser(){
+    public UserTransfer getUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
-              //  UserDetails userDetails = (UserDetails) principal;
+        UserDetails userDetails = (UserDetails) principal;
 
-
-
-        UserDetails userDetails =
-                (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        //UserDetails userDetails =(UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return new UserTransfer(userDetails.getUsername(), this.createRoleMap(userDetails));
     }
 
     private Map<String, Boolean> createRoleMap(UserDetails userDetails) {
         Map<String, Boolean> roles = new HashMap<String, Boolean>();
-        for (GrantedAuthority authority: userDetails.getAuthorities()) {
+        for (GrantedAuthority authority : userDetails.getAuthorities()) {
             roles.put(authority.getAuthority(), Boolean.TRUE);
         }
         return roles;
@@ -61,7 +58,7 @@ public class UserAuthenticationController {
         String[] token = body.split("&");
         String username = token[0].split("=")[1];
         String password = token[1].split("=")[1];
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username,password);
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
         Authentication authentication = this.authenticationManager.authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 

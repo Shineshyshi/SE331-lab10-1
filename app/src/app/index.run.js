@@ -24,9 +24,8 @@
       if($rootScope.user.roles[role] == undefined) {
         return false;
       }
-
       return $rootScope.user.roles[role];
-    }
+    };
 
     $rootScope.logout = function () {
       delete $rootScope.user;
@@ -46,6 +45,7 @@
       });
     }
     $rootScope.initialized = true;
+
   }
 
 })();

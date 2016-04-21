@@ -60,7 +60,7 @@
         }
       }
     });
-    var exampleAppConfig = {    useAuthTokenHeader: true   };
+    var exampleAppConfig = {useAuthTokenHeader: true};
 
     $httpProvider.interceptors.push(function ($q, $rootScope) {
       return {
