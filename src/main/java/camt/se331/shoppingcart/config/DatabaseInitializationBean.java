@@ -88,9 +88,9 @@ public class DatabaseInitializationBean implements InitializingBean {
         Set<Role> roles3 = new HashSet<>();
         roles3.add(ForeignRole);
         foreign.setRoles(roles3);
-
+        userRepository.save(foreign);
         userRepository.save(admin);
         userRepository.save(user);
-        userRepository.save(foreign);
+
     }
 }

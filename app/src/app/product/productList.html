@@ -42,7 +42,7 @@
           <th class="text-right" translate>listProduct.netPrice</th>
           <th class="text-right" translate>listProduct.price</th>
           <th class="text-center" translate>listProduct.picture</th>
-          <th translate ng-show="hasRole('admin')">listProduct.edit</th>
+          <th translate ng-show="hasRole('user')">listProduct.edit</th>
           <th translate ng-show="hasRole('admin')">listProduct.delete</th>
 
         </tr>
@@ -57,7 +57,7 @@
               <img ng-src="data:{{image.contentType}};base64,{{image.content}}">
             </div>
           </td>
-          <td class="text-center" ng-show="hasRole('admin')" ><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
+          <td class="text-center" ng-show="hasRole('user')" ><a ng-href="#/editProduct/{{product.id}}"> <span class="glyphicon glyphicon-edit"
                                                                                    aria-hidden="true"></span></a></td>
           <td class="text-center" ng-show="hasRole('admin')"><a ng-href="#/listProduct"><span class="glyphicon glyphicon-remove-circle"
                                                                    aria-hidden="true"

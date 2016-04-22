@@ -14,6 +14,7 @@ import java.util.Set;
  * Created by Shine on 20/4/2559.
  */
 public class SecurityUser extends User implements UserDetails {
+    private static final long serialVersionUID = 1L;
     public SecurityUser(User user) {
         if(user != null) {
             this.setId(user.getId());
